@@ -8,12 +8,32 @@ import {
   ResponsiveContainer
 } from "recharts";
 
-export default function AssetChart({ title, data }) {
+export default function AssetChart({ title, data, marketData }) {
+  const getTrendColor = (trend) => {
+    return trend === "Bullish" ? "#22c55e" : "#ef4444";
+  };
+
   return (
     <div className="card">
       <div className="card-header">
         <h3>{title}</h3>
         <span className="subtitle">Live price movement</span>
+        {marketData && (
+          <div className="card-meta">
+            <span className="trend-badge" style={{ color: getTrendColor(marketData.trend) }}>
+              {marketData.trend}
+            </span>
+            {marketData.sentiment && (
+              <span className="sentiment-indicator" style={{ 
+                color: marketData.sentiment.label === "positive" ? "#22c55e" : 
+                       marketData.sentiment.label === "negative" ? "#ef4444" : "#94a3b8"
+              }}>
+                {marketData.sentiment.label === "positive" ? "📈" : 
+                 marketData.sentiment.label === "negative" ? "📉" : "➡️"}
+              </span>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="chart-wrapper">
