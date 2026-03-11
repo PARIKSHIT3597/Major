@@ -38,6 +38,11 @@ dist/
 build/
 *.egg-info/
 
+# Electron
+release/
+frontend/dist/
+frontend/release/
+
 # Logs
 *.log
 
