@@ -18,7 +18,7 @@ export default function AssetChart({ title, data, marketData }) {
       <div className="card-header">
         <h3>{title}</h3>
         <span className="subtitle">Live price movement</span>
-        {marketData && (
+            {marketData && (
           <div className="card-meta">
             <span className="trend-badge" style={{ color: getTrendColor(marketData.trend) }}>
               {marketData.trend}

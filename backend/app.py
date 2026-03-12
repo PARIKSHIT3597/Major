@@ -97,6 +97,7 @@ def get_news_sentiment(symbol):
     threading.Thread(target=_fetch_and_cache_sentiment, args=(symbol,), daemon=True).start()
     return DEFAULT_SENTIMENT
 
+
 def stream_market(symbols):
     global prices
     prev_prices = {}

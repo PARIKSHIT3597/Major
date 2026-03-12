@@ -41,26 +41,26 @@ def get_mock_news(symbol, max_articles=5):
     """Generate mock news when API is unavailable"""
     news_templates = {
         "AAPL": [
-            {"title": f"{symbol} announces new product line", "summary": "Tech giant reveals innovative products expected to boost revenue.", "sentiment": "positive"},
-            {"title": f"{symbol} reports strong quarterly earnings", "summary": "Company exceeds analyst expectations with record profits.", "sentiment": "positive"},
-            {"title": f"{symbol} faces supply chain challenges", "summary": "Manufacturing delays may impact future deliveries.", "sentiment": "negative"},
+            {"title": f"{symbol} announces new product line", "summary": "Tech giant reveals innovative products expected to boost revenue."},
+            {"title": f"{symbol} reports strong quarterly earnings", "summary": "Company exceeds analyst expectations with record profits."},
+            {"title": f"{symbol} faces supply chain challenges", "summary": "Manufacturing delays may impact future deliveries."},
         ],
         "MSFT": [
-            {"title": f"{symbol} expands cloud services", "summary": "Company continues to dominate cloud computing market.", "sentiment": "positive"},
-            {"title": f"{symbol} announces AI partnerships", "summary": "Strategic alliances to advance artificial intelligence capabilities.", "sentiment": "positive"},
+            {"title": f"{symbol} expands cloud services", "summary": "Company continues to dominate cloud computing market."},
+            {"title": f"{symbol} announces AI partnerships", "summary": "Strategic alliances to advance artificial intelligence capabilities."},
         ],
         "BTC-USD": [
-            {"title": "Bitcoin adoption increases globally", "summary": "More institutions adopt cryptocurrency as payment method.", "sentiment": "positive"},
-            {"title": "Regulatory concerns affect crypto market", "summary": "Government regulations create uncertainty for investors.", "sentiment": "negative"},
+            {"title": "Bitcoin adoption increases globally", "summary": "More institutions adopt cryptocurrency as payment method."},
+            {"title": "Regulatory concerns affect crypto market", "summary": "Government regulations create uncertainty for investors."},
         ],
         "ETH-USD": [
-            {"title": "Ethereum network upgrades show promise", "summary": "Technical improvements enhance transaction efficiency.", "sentiment": "positive"},
-            {"title": "DeFi market shows volatility", "summary": "Decentralized finance sector experiences fluctuations.", "sentiment": "neutral"},
+            {"title": "Ethereum network upgrades show promise", "summary": "Technical improvements enhance transaction efficiency."},
+            {"title": "DeFi market shows volatility", "summary": "Decentralized finance sector experiences fluctuations."},
         ]
     }
     
     templates = news_templates.get(symbol, [
-        {"title": f"{symbol} market update", "summary": "Latest developments affecting the asset.", "sentiment": "neutral"}
+        {"title": f"{symbol} market update", "summary": "Latest developments affecting the asset."}
     ])
     
     articles = []

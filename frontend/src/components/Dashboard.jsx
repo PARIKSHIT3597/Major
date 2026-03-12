@@ -37,14 +37,12 @@ export default function Dashboard() {
   useEffect(() => {
     // Handle socket connection
     const handleConnect = () => {
-      console.log("Socket connected");
       setSocketConnected(true);
       // Start socket stream
       socket.emit("start_stream", { symbols: ASSETS.map(a => a.symbol) });
     };
 
     const handleDisconnect = () => {
-      console.log("Socket disconnected");
       setSocketConnected(false);
     };
 
@@ -53,7 +51,6 @@ export default function Dashboard() {
 
     // Listen for market updates
     const handleMarketUpdate = (updates) => {
-      console.log("Market update received:", updates);
       setMarketData(prev => {
         const updated = { ...prev };
         updates.forEach(update => {
