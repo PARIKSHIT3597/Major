@@ -108,14 +108,16 @@ export default function NewsSentiment({ symbol, sentiment }) {
               <p className="article-summary">{article.summary}</p>
               <div className="article-footer">
                 <span className="article-publisher">{article.publisher}</span>
-                <a
-                  href={article.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="article-link"
-                >
-                  Read more →
-                </a>
+                {article.link && !article.link.includes("example.com") && (
+                  <a
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="article-link"
+                  >
+                    Read more →
+                  </a>
+                )}
               </div>
             </div>
           ))

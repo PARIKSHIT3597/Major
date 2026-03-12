@@ -1,5 +1,3 @@
-import feedparser
-import requests
 from datetime import datetime, timedelta
 import yfinance as yf
 
@@ -25,7 +23,9 @@ def fetch_news_rss(symbol, max_articles=5):
                     "publisher": news_item.get("publisher", "Unknown"),
                     "pub_date": datetime.fromtimestamp(news_item.get("providerPublishTime", 0)).isoformat() if news_item.get("providerPublishTime") else datetime.now().isoformat()
                 })
-        
+
+        print(f"Yahoo news for {symbol}: {len(news_list) if news_list else 0} articles")
+
         # If we got valid articles, return them
         if articles:
             return articles
@@ -68,8 +68,8 @@ def get_mock_news(symbol, max_articles=5):
         articles.append({
             "title": template["title"],
             "summary": template["summary"],
-            "link": f"https://example.com/news/{symbol.lower()}-{i+1}",
-            "publisher": "Financial News",
+            "link": "",  # No real link for mock news - frontend will hide "Read more"
+            "publisher": "Financial News (sample)",
             "pub_date": (datetime.now() - timedelta(hours=i+1)).isoformat()
         })
     
