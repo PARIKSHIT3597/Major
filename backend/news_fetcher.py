@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 import yfinance as yf
 
 def fetch_news_rss(symbol, max_articles=5):
-    """Fetch news from Yahoo Finance RSS feed for a given symbol"""
+    """Fetch news from Yahoo Finance (via yfinance) for a given symbol"""
     try:
         # Get stock ticker
         ticker = yf.Ticker(symbol)
